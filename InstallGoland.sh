@@ -11,7 +11,7 @@ echo "export PATH=$PATH:/usr/local/go/bin" >> /etc/profile
 ##Installation completed.
 clear
 echo "GoLang has been installed succesfully"
-sleep 2s
+sleep 3s
 clear
 echo "You must need to logout and login again to complete the Installation"
 echo "#####################################################################"
