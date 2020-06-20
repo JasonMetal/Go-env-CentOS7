@@ -18,5 +18,5 @@ echo "You must need to logout and login again to complete the Installation"
 echo "#####################################################################"
 echo "Installation path is /usr/local/go"
 echo "GL HF by JasonMetal"
-echo "Bye"
+echo "Bye~"
 
