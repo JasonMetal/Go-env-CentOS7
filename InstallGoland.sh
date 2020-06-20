@@ -3,9 +3,8 @@
 #Installing imp packages
 yum install wget unzip -y
 ##Donwloading Go Package
-wget -O /opt/go1.14.4.linux-amd64.tar.gz https://dl.google.com/go/go1.14.4.linux-amd64.tar.gz
-
-##Extract packages to a location
+wget -O /opt/go1.14.4.linux-amd64.tar.gz https://storage.googleapis.com/golang/go1.14.4.linux-amd64.tar.gz
+#Extract packages to a location
 tar -C /usr/local -xzf /opt/go1.14.4.linux-amd64.tar.gz
 ##Export Variable path
 echo "export PATH=$PATH:/usr/local/go/bin" >> /etc/profile
@@ -19,4 +18,3 @@ echo "#####################################################################"
 echo "Installation path is /usr/local/go"
 echo "GL HF by JasonMetal"
 echo "Bye~"
-
