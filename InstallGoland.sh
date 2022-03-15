@@ -9,6 +9,7 @@ wget -O /opt/go1.17.8.linux-amd64.tar.gz https://go.dev/dl/go1.17.8.linux-amd64.
 tar -C /usr/local -xzf /opt/go1.17.8.linux-amd64.tar.gz
 ##Export Variable path
 echo "export PATH=$PATH:/usr/local/go/bin" >> /etc/profile
+source /etc/profile
 ##Installation completed.
 clear
 echo "GoLang has been installed succesfully"
@@ -18,3 +19,5 @@ echo "You must need to logout and login again to complete the Installation"
 echo "#####################################################################"
 echo "Installation path is /usr/local/go"
 echo "GG GL HF"
+echo "###show go env!######################################################"
+go env
