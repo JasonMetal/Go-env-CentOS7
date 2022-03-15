@@ -6,7 +6,7 @@ yum install wget unzip -y
 #wget -O /opt/go1.14.4.linux-amd64.tar.gz https://storage.googleapis.com/golang/go1.14.4.linux-amd64.tar.gz
 wget -O /opt/go1.17.8.linux-amd64.tar.gz https://go.dev/dl/go1.17.8.linux-amd64.tar.gz
 ##Extract packages to a location
-tar -C /usr/local -xzf /opt/go1.14.4.linux-amd64.tar.gz
+tar -C /usr/local -xzf /opt/go1.17.8.linux-amd64.tar.gz
 ##Export Variable path
 echo "export PATH=$PATH:/usr/local/go/bin" >> /etc/profile
 ##Installation completed.
