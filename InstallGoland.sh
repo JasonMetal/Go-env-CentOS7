@@ -8,6 +8,13 @@ yum install wget unzip -y
 wget -O /opt/go1.18.linux-amd64.tar.gz https://go.dev/dl/go1.18.linux-amd64.tar.gz
 ##Extract packages to a location
 tar -C /usr/local -xzf /opt/go1.18.linux-amd64.tar.gz
+
+sleep 2s
+
+sleep 2s
+
+sleep 2s
+
 ##Export Variable path
 echo "export PATH=$PATH:/usr/local/go/bin" >> /etc/profile
 source /etc/profile
