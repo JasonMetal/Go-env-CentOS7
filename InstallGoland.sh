@@ -5,9 +5,10 @@ yum install wget unzip -y
 ##Donwloading Go Package
 #wget -O /opt/go1.14.4.linux-amd64.tar.gz https://storage.googleapis.com/golang/go1.14.4.linux-amd64.tar.gz
 #wget -O /opt/go1.17.8.linux-amd64.tar.gz https://go.dev/dl/go1.17.8.linux-amd64.tar.gz
-wget -O /opt/go1.18.linux-amd64.tar.gz https://go.dev/dl/go1.18.linux-amd64.tar.gz
+#wget -O /opt/go1.18.linux-amd64.tar.gz https://go.dev/dl/go1.18.linux-amd64.tar.gz
+wget -O /opt/go1.20.3.linux-amd64.tar.gz https://golang.google.cn/dl/go1.20.3.linux-amd64.tar.gz
 ##Extract packages to a location
-tar -C /usr/local -xzf /opt/go1.18.linux-amd64.tar.gz
+tar -C /usr/local -xzf /opt/go1.20.3.linux-amd64.tar.gz
 
 sleep 2s
 
