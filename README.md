@@ -1,7 +1,7 @@
 # GoCentOS
 Auto install GoLang on CentOS 7 Machines
 
-Go Version : 1.18
+Go Version : 1.20.3
 
 ## Instruction
 
