@@ -1,7 +1,7 @@
 #!/bin/bash
 ##Install Go Lang in CentOS 7 machines.
 #Installing imp packages
-yum install wget unzip -y
+sudo apt install wget unzip -y
 ##Donwloading Go Package
 #wget -O /opt/go1.14.4.linux-amd64.tar.gz https://storage.googleapis.com/golang/go1.14.4.linux-amd64.tar.gz
 #wget -O /opt/go1.17.8.linux-amd64.tar.gz https://go.dev/dl/go1.17.8.linux-amd64.tar.gz
