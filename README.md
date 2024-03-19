@@ -1,12 +1,12 @@
 # GoCentOS
-Auto install GoLang on CentOS 7 Machines
+Auto install GoLang on Linux Machines
 
-Go Version : 1.20.3
+Go Version : 1.x
 
 ## Instruction
 
 Login as root user,
-
-*sh InstallGO.sh*
+## $1 = 1.20
+*sh InstallGO.sh $1*
 
 And follow the instruction.
