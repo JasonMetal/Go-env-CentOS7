@@ -51,31 +51,48 @@ echo "Downloading Go version ${VERSION}..."
 # Install wget and unzip if not already installed
 yum install wget unzip -y
 
-# Download the specified Go package
-wget -O "/opt/${FILENAME}" "${DOWNLOAD_URL}"
-#wget -O /opt/go1.20.3.linux-amd64.tar.gz https://golang.google.cn/dl/go1.20.3.linux-amd64.tar.gz
+if [ ! -f "/opt/${FILENAME}" ]; then
+    # Download the specified Go package
+    wget -O "/opt/${FILENAME}" "${DOWNLOAD_URL}"
+    #wget -O /opt/go1.20.3.linux-amd64.tar.gz https://golang.google.cn/dl/go1.20.3.linux-amd64.tar.gz
 
-# Inform the user download is complete and where it's located
-echo "Download complete! File located at /opt/${FILENAME}"
+    # Inform the user download is complete and where it's located
+    echo "Download complete! File located at /opt/${FILENAME}"
+else
+   # File exists, do not download
+      echo "The file ${FILENAME} already exists, skipping download."
+fi
 
 # 定义安装路径
-INSTALL_PATH="/usr/local/go/${VERSION}"
+LOCAL_PATH="/usr/local/"
+INSTALL_PATH="/usr/local/go/"
+BAK_PATH="/usr/local/tmp/bak"
 mkdir -p "${INSTALL_PATH}"
-##Extract packages to a location
-#tar -C /usr/local -xzf /opt/go1.20.3.linux-amd64.tar.gz
-tar -C "${INSTALL_PATH}" -xzf "/opt/${FILENAME}"
+mkdir -p "${BAK_PATH}"
 
+# Check if INSTALL_PATH exists
+# 检查INSTALL_PATH下是否存在文件 (使用通配符 *)
+if ls "${INSTALL_PATH}"* 1> /dev/null 2>&1; then
+    # 存在文件，将它们移动到备份目录
+    echo "Moving existing files from ${INSTALL_PATH} to ${BAK_PATH}"
+    mv -r "${INSTALL_PATH}"* "${BAK_PATH}"
+else
+    # 不存在文件
+    echo "No files found in ${INSTALL_PATH} to move."
+    #Extract packages to a location
+    #tar -C /usr/local -xzf /opt/go1.20.3.linux-amd64.tar.gz
 
+fi
 sleep 2s
+tar -C "${LOCAL_PATH}" -xzf "/opt/${FILENAME}"
 
 ##Export Variable path
 #/usr/local/go/1.22.1/go/bin
 # 配置环境变量
-if ! grep -q "${INSTALL_PATH}/bin" /etc/profile; then
-  echo "export PATH=\$PATH:${INSTALL_PATH}/go/bin" >> /etc/profile
+if ! grep -q "${INSTALL_PATH}bin" /etc/profile; then
+  echo "export PATH=\$PATH:${INSTALL_PATH}bin" >> /etc/profile
 fi
-#echo "export PATH=$PATH:"${INSTALL_PATH}"/bin" >> /etc/profile
-sudo source /etc/profile
+source /etc/profile
 ##Installation completed.
 clear
 echo "GoLang has been installed succesfully"
@@ -86,3 +103,11 @@ echo "#####################################################################"
 echo "GG GL HF"
 echo "###show go env!######################################################"
 go env
+
+rm  "/opt/${FILENAME}"
+
+if [ ! -f "/opt/${FILENAME}" ]; then
+    echo "File deleted successfully."
+else
+    echo "Failed to delete the file."
+fi
