@@ -69,10 +69,10 @@ tar -C "${INSTALL_PATH}" -xzf "/opt/${FILENAME}"
 sleep 2s
 
 ##Export Variable path
-
+#/usr/local/go/1.22.1/go/bin
 # 配置环境变量
 if ! grep -q "${INSTALL_PATH}/bin" /etc/profile; then
-  echo "export PATH=\$PATH:${INSTALL_PATH}/bin" >> /etc/profile
+  echo "export PATH=\$PATH:${INSTALL_PATH}/go/bin" >> /etc/profile
 fi
 #echo "export PATH=$PATH:"${INSTALL_PATH}"/bin" >> /etc/profile
 sudo source /etc/profile
