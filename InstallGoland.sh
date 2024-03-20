@@ -66,7 +66,7 @@ fi
 # 定义安装路径
 LOCAL_PATH="/usr/local/"
 INSTALL_PATH="/usr/local/go/"
-BAK_PATH="/usr/local/tmp/bak"
+BAK_PATH="/usr/local/tmp/bak/go/"
 mkdir -p "${INSTALL_PATH}"
 mkdir -p "${BAK_PATH}"
 
@@ -75,7 +75,7 @@ mkdir -p "${BAK_PATH}"
 if ls "${INSTALL_PATH}"* 1> /dev/null 2>&1; then
     # 存在文件，将它们移动到备份目录
     echo "Moving existing files from ${INSTALL_PATH} to ${BAK_PATH}"
-    mv -r "${INSTALL_PATH}"* "${BAK_PATH}"
+    mv "${INSTALL_PATH}"* "${BAK_PATH}"
 else
     # 不存在文件
     echo "No files found in ${INSTALL_PATH} to move."
