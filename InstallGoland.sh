@@ -7,9 +7,10 @@ echo "2) 1.19.13"
 echo "3) 1.20.14"
 echo "4) 1.21.8"
 echo "5) 1.22.1"
+echo "6) 1.23.0"
 
 # Prompt user for a choice
-read -p "Enter choice [1-5]: " choice
+read -p "Enter choice [1-6]: " choice
 
 
 # Base URL for downloading
@@ -33,6 +34,9 @@ case $choice in
     ;;
   5)
     VERSION="1.22.1"
+    ;;
+  6)
+    VERSION="1.23.0"
     ;;
   *)
     echo "Invalid choice."
